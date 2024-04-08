@@ -1,10 +1,28 @@
 <h4 class="font-medium text-2xl mb-3">Agregar personaje</h4>
 
 <form class="flex flex-col gap-2 w-80">
-  <input class="h-8 rounded-md px-2" type="text" placeholder="Nombre">
-  <input class="h-8 rounded-md px-2" type="number" placeholder="Poder">
+  <input
+    class="h-8 rounded-md px-2"
+    [(ngModel)]="character.name"
+    type="text"
+    name="name"
+    placeholder="Nombre"
+  >
+  <input
+    class="h-8 rounded-md px-2"
+    [(ngModel)]="character.power"
+    type="number"
+    name="power"
+    placeholder="Poder"
+  >
 
-  <button type="submit" class="bg-green-500 px-2 py-1 rounded-md hover:bg-green-400">
+  <pre>{{character | json}}</pre>
+
+  <button
+    (click)="emitCharacter()"
+    type="submit"
+    class="bg-green-500 px-2 py-1 rounded-md hover:bg-green-400"
+  >
     Agregar
   </button>
 </form>
