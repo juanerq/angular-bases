@@ -8,18 +8,27 @@
     first as isFirst;
     let isLast = last;
     "
-    class="p-1"
+    class="flex gap-2 pl-1 items-center justify-between"
     [ngClass]="{
       'bg-green-500': isLast,
       'bg-amber-400': isFirst
     }"
   >
-    <span class="text-red-700">{{i + 1}}. </span>
-    <span>{{character.name}} - </span>
-    <strong>Power: </strong>
-    <span>{{character.power}}</span>
-    <span>Es el primero: fisrt</span>
-    <span>Es el último: last</span>
+    <div>
+      <span class="font-semibold">{{i + 1}}. </span>
+      <span>{{character.name}} - </span>
+      <strong>Power: </strong>
+      <span>{{character.power}}</span>
+      <span>Es el primero: fisrt</span>
+      <span>Es el último: last</span>
+    </div>
+
+    <button
+      (click)="onDeleteCharacter(character.id)"
+      class="bg-red-400 hover:bg-red-500 p-1 px-3 rounded-md"
+    >
+      X
+    </button>
 
   </li>
 </ul>

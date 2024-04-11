@@ -1,6 +1,6 @@
 <h4 class="font-medium text-2xl mb-3">Agregar personaje</h4>
 
-<form class="flex flex-col gap-2 w-80">
+<form class="flex flex-col gap-2 w-80" (ngSubmit)="emitCharacter()">
   <input
     class="h-8 rounded-md px-2"
     [(ngModel)]="character.name"
@@ -16,10 +16,9 @@
     placeholder="Poder"
   >
 
-  <pre>{{character | json}}</pre>
+  <!-- <pre>{{character | json}}</pre> -->
 
   <button
-    (click)="emitCharacter()"
     type="submit"
     class="bg-green-500 px-2 py-1 rounded-md hover:bg-green-400"
   >

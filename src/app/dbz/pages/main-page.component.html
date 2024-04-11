@@ -4,12 +4,12 @@
 
 <div>
   <div>
-    <dbz-list [characterList]="characters"></dbz-list>
+    <dbz-list [characterList]="characters" (onDelete)="onDeleteCharacter($event)"></dbz-list>
   </div>
 
   <br>
 
   <div>
-    <dbz-add-characters></dbz-add-characters>
+    <dbz-add-characters (onNewCharacter)="onNewCharacter($event)"></dbz-add-characters>
   </div>
 </div>
